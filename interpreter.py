@@ -6,8 +6,7 @@ result = 0
 def eval_tree(tree):
     """ The top level function.
         Args:
-            param1 (int): The first parameter.
-            param2 (:obj:`str`, optional): The second parameter. Defaults to None.
+            tree (ast.Module): The ast abstract syntax tree- the root is a Module node object. The children are contained in a list.
         Returns:
             integer or float: the result of any value returned by the program, 0 by default.
     """
@@ -26,7 +25,7 @@ def eval_node(node, env):
             env (GlobalEnv | LocalEnv): An environment data type.
         Returns:
             (integer or float, environment): A tuple, where the first element is the result of any
-            value computed at this node, and either a GlobalEnv or LocalEnv object.
+            value computed at this node, and the second value is either a GlobalEnv or LocalEnv object.
     """
     global genv
     global result
